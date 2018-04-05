@@ -2,7 +2,6 @@ FROM fluent/fluentd:latest
 MAINTAINER Pascal Bernier <xbernpa@ville.montreal.qc.ca>
 USER root
 WORKDIR /home/fluent
-ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
 RUN set -ex \
     && apk add --no-cache --virtual .build-deps \
