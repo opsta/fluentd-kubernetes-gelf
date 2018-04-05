@@ -31,5 +31,9 @@ ENV FLUENTD_CONF="fluent.conf"
 # -> td-agent (stable) vs fluentd (edge)
 #ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
 
+# Customize entrypoint.sh (run as root)
+COPY entrypoint.sh /bin/
+RUN chmod +x /bin/entrypoint.sh
+
 # Run Fluentd
 CMD exec fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
