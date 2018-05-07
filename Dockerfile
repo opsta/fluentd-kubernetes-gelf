@@ -11,7 +11,9 @@ RUN set -ex \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
     && gem install fluent-plugin-gelf-hs \
+    && gem install fluent-plugin-s3 \
     && gem install fluent-plugin-kubernetes_metadata_filter \
+    && gem install fluent-plugin-detect-exceptions \
     && apk del .build-deps \
     && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
